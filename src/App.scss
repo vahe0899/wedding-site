@@ -1,6 +1,7 @@
 .container {
   min-height: 700vh; /* 7 экранов */
   position: relative;
+  color: white;
 }
 
 .bg-image {
@@ -39,7 +40,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   font-family: "Arial", sans-serif;
   text-align: center;
   padding: 20px;
@@ -52,38 +52,46 @@
   padding: 40px;
   border-radius: 20px;
   min-height: 100vh;
+}
 
-  h1 {
-    font-family: "Bad Script", cursive;
-    font-size: 4rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
+h1 {
+  font-family: "Bad Script", cursive;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
-  h2 {
-    font-family: "Bad Script", cursive;
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
+h2 {
+  font-family: "Bad Script", cursive;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
-  p {
-    font-family: "Bad Script", cursive;
-    font-weight: 600;
-    font-size: 2.5vh;
-    line-height: 1.6;
-    opacity: 0.9;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    max-width: 500px;
-    margin: 0 auto;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding: 8px;
-  }
+h3 {
+  font-family: "Bad Script", cursive;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  font-family: "Bad Script", cursive;
+  font-weight: 600;
+  font-size: 2.5vh;
+  line-height: 1.6;
+  opacity: 0.9;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 8px;
 }
 
 .food-img {
@@ -96,4 +104,93 @@
     width: 250px;
     height: 250px;
   }
+}
+
+.final-block {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.final-img-container {
+  // width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-img {
+  width: 320px;
+  object-fit: cover;
+}
+
+.final-img-text-left {
+  font-family: "Bad Script", cursive;
+  transform: rotate(8deg);
+  position: absolute;
+  left: 30px;
+  top: -4px;
+}
+
+.final-img-text-right {
+  font-family: "Bad Script", cursive;
+  position: absolute;
+  transform: rotate(70deg);
+  left: 199px;
+  top: 50px;
+}
+
+.final-content {
+  font-family: "Bad Script", cursive;
+  font-weight: 600;
+  font-size: 2.5vh;
+  line-height: 1.6;
+  opacity: 0.9;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 8px;
+  text-align: center;
+}
+
+.end-block {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  display: block;
+  overflow: visible;
+  width: 100px;
+  font-size: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.circle path {
+  fill: none;
+}
+
+.circle-text {
+  fill: #fff;
+}
+
+.logo-img {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 128px;
+  left: 313px;
+  transform: rotate(24deg);
+}
+
+.end-title {
+  margin-top: 200px;
 }

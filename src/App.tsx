@@ -6,6 +6,8 @@ import toast from "./toast.png";
 import cheese from "./cheese.png";
 import egg from "./egg.png";
 import ham from "./ham.png";
+import final from "./final.webp";
+import logo from "./logo.webp";
 
 function App() {
   const firstSectionRef = useRef<HTMLDivElement | null>(null);
@@ -22,6 +24,9 @@ function App() {
     5: useRef<HTMLDivElement | null>(null),
     6: useRef<HTMLDivElement | null>(null),
   };
+
+  // Добавляем ref для end-block
+  const endBlockRef = useRef<HTMLDivElement | null>(null);
 
   const {scrollYProgress} = useScroll({
     target: firstSectionRef,
@@ -71,6 +76,33 @@ function App() {
   useBlockTracker(4);
   useBlockTracker(5);
   useBlockTracker(6);
+
+  // Отслеживаем end-block для убирания блюра
+  const {scrollYProgress: endBlockProgress} = useScroll({
+    target: endBlockRef,
+    offset: ["start end", "start start"],
+  });
+
+  useMotionValueEvent(endBlockProgress, "change", (progress) => {
+    if (progress >= 0.5) {
+      // Убираем блюр и масштабирование когда пользователь доходит до end-block
+      setIsImageBlurred(false);
+      console.log("✨ Убираем блюр и масштабирование для end-block!");
+    } else if (progress < 0.5) {
+      // Восстанавливаем блюр когда пользователь скроллит назад от end-block
+      // Проверяем, что блок 1 (тост) все еще в активной позиции
+      const block1Progress = blockRefs[1].current
+        ? (window.scrollY -
+            (blockRefs[1].current.offsetTop - window.innerHeight)) /
+          window.innerHeight
+        : 0;
+
+      if (block1Progress >= 0.9) {
+        setIsImageBlurred(true);
+        console.log("🔍 Восстанавливаем блюр при скролле назад!");
+      }
+    }
+  });
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
     console.log("Overall progress:", progress);
@@ -298,6 +330,42 @@ function App() {
                 и&nbsp;принять приглашение/ отказаться (фу)
               </motion.p>
             </div>
+          </div>
+          <div className="final-block">
+            <h3 className="final-title">Почему croque-madame?</h3>
+            <div className="final-img-container">
+              <img src={final} alt="Final" className="final-img" />
+              <img src={logo} alt="logo" className="logo-img" />
+              <div className="final-img-text-left">
+                <svg className="circle" viewBox="0 0 100 100">
+                  <path id="circle" d="M 0,75 a 75,75 0 1,1 0,1 z" />
+                  <text>
+                    <textPath className="circle-text" xlinkHref="#circle">
+                      это наше любимое блюдо
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+              <div className="final-img-text-right">
+                <svg className="circle" viewBox="0 0 80 80">
+                  <path id="circle" d="M 0,80 a 80,80 0 1,1 0,1 z" />
+                  <text>
+                    <textPath className="circle-text" xlinkHref="#circle">
+                      в espresso season
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+            </div>
+            <div className="final-content">
+              Croque-madame можно попробовать в&nbsp;Екатеринбурге,
+              но&nbsp;только в&nbsp;Красноярске получится сделать его
+              по&nbsp;нашему рецепту&nbsp;&mdash; с&nbsp;любовью, друзьями
+              и&nbsp;преисполненными счастьем!
+            </div>
+          </div>
+          <div className="end-block" ref={endBlockRef}>
+            <h1 className="end-title">Будем ждать!</h1>
           </div>
         </div>
       </div>
