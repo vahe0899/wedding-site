@@ -1,11 +1,11 @@
 import {motion, useScroll, useMotionValueEvent} from "framer-motion";
 import "./App.scss";
 import {useRef, useState} from "react";
-import image from "./bg.jpg";
-import toast from "./toast.png";
-import cheese from "./cheese.png";
-import egg from "./egg.png";
-import ham from "./ham.png";
+import image from "./bg.webp";
+import toast from "./toast.webp";
+import cheese from "./cheese.webp";
+import egg from "./egg.webp";
+import ham from "./ham.webp";
 import final from "./final.webp";
 import logo from "./logo.webp";
 
