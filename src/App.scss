@@ -101,14 +101,8 @@ p {
   height: 400px;
 }
 
-@media (max-width: 768px) {
-  .food-img {
-    width: 250px;
-    height: 250px;
-  }
-}
-
 .final-block {
+  padding: 40px;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -126,7 +120,7 @@ p {
 }
 
 .final-img {
-  width: 320px;
+  width: 450px;
   object-fit: cover;
 }
 
@@ -134,16 +128,16 @@ p {
   font-family: "Bad Script", cursive;
   transform: rotate(8deg);
   position: absolute;
-  left: 30px;
+  left: 50px;
   top: -4px;
 }
 
 .final-img-text-right {
   font-family: "Bad Script", cursive;
   position: absolute;
-  transform: rotate(70deg);
-  left: 199px;
-  top: 50px;
+  transform: rotate(62deg);
+  left: 284px;
+  top: 72px;
 }
 
 .final-content {
@@ -170,8 +164,8 @@ p {
 .circle {
   display: block;
   overflow: visible;
-  width: 100px;
-  font-size: 20px;
+  width: 120px;
+  font-size: 24px;
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
@@ -185,12 +179,12 @@ p {
 }
 
 .logo-img {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   position: absolute;
-  top: 128px;
-  left: 313px;
-  transform: rotate(24deg);
+  top: 192px;
+  left: 433px;
+  transform: rotate(30deg);
 }
 
 .end-title {
@@ -241,5 +235,51 @@ p {
   }
   60% {
     transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .food-img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .final-img {
+    width: 320px;
+    object-fit: cover;
+  }
+
+  .final-img-text-left {
+    font-family: "Bad Script", cursive;
+    transform: rotate(8deg);
+    position: absolute;
+    left: 30px;
+    top: -4px;
+  }
+
+  .final-img-text-right {
+    font-family: "Bad Script", cursive;
+    position: absolute;
+    transform: rotate(70deg);
+    left: 199px;
+    top: 50px;
+  }
+
+  .circle {
+    display: block;
+    overflow: visible;
+    width: 100px;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+
+  .logo-img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 128px;
+    left: 313px;
+    transform: rotate(24deg);
   }
 }
