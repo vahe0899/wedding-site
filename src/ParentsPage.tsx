@@ -358,7 +358,7 @@ function ParentsPage() {
             <div className="final-content">
               Croque-madame можно попробовать в&nbsp;Екатеринбурге,
               но&nbsp;только в&nbsp;Красноярске получится сделать его
-              по&nbsp;нашему рецепту&nbsp;&mdash; с&nbsp;любовью, друзьями
+              по&nbsp;нашему рецепту&nbsp;&mdash; с&nbsp;любовью
               и&nbsp;преисполненными счастьем!
             </div>
           </div>
